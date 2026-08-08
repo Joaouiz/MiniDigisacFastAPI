@@ -1,23 +1,16 @@
-from fastapi import APIRouter
-
 from services import arquive_service, gemini_service, whatsapp_service
 from services.client_service import ClientService
 
-router = APIRouter()
 client_service = ClientService()
 
-@router.get("/clients")
-async def clients():
-    return client_service.search_clients()
-
-@router.get("/clients/{client_id}")
-async def generate_message(client_id: int):
+def conversacao(contexto, nomeCliente, numeroCliente, idCliente):
     clientes = client_service.search_clients()
-    prompt = arquive_service.defaultBuilder(clientes[client_id])
+
+    prompt = arquive_service.defaultBuilder(idCliente, contexto)
 
     jsonZap = arquive_service.zapJson("+5541997818299", gemini_service.GerarMensagem(prompt))
     aux = whatsapp_service.enviarMensagem(jsonZap)
 
     print(aux)
 
-    return "Mensagem enviada com sucesso!"
+    return 0

@@ -1,9 +1,12 @@
 import requests
 
+from services import arquive_service
+
+
 def GerarMensagem(prompt):
 
-    API_KEY = ""
-    url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent"
+    API_KEY = arquive_service.ler_dado("geminiKEY")
+    url = arquive_service.ler_dado("geminiURL")
     headers = {
         "x-goog-api-key": f"{API_KEY}"
     }
