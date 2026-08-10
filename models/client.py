@@ -2,7 +2,7 @@ from datetime import date
 from pydantic import BaseModel
 
 class Client(BaseModel):
-    id: int
+    id: str
     name: str
     phone: str
     email: str
