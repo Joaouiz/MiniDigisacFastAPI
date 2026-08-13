@@ -15,7 +15,7 @@ def defaultBuilder(dadosCliente, contexto):
                                 f"{dadosCliente.debt}. Eh que a conta vence em {dadosCliente.due_date}."
                                 f"Seja cordial!"
                                 f"Logo em seguida vem o historico da conversa: {contexto}"
-                                f"Se nao tiver historico com data da mensagem e o conteudo dela considere como se fosse o primeiro contato com o cliente."
+                                f"Se nao tiver historico com data da mensagem e o conteudo dela considere como se fosse o primeiro contato com o cliente. E se no contexto tiver que o cliente escreveu 'Gerar PIX' considere como enviado."
                     }
                 ]
             }
