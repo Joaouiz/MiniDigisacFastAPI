@@ -56,3 +56,12 @@ def ler_dado(caminho):
     with open(f"./keys/{caminho}.txt", "r") as arquivo:
         dado = arquivo.read()
     return dado
+
+def lerMSGProc(caminho):
+    with open(f"./util/{caminho}.txt", "r") as arquivo:
+        dado = arquivo.readlines()
+    return dado
+
+def addMSGProc(caminho, idMSG):
+    with open(f"./util/{caminho}.txt", "a") as arquivo:
+        arquivo.write(idMSG)

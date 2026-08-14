@@ -2,7 +2,6 @@ import requests
 
 from services import arquive_service
 
-
 def GerarMensagem(prompt):
 
     API_KEY = arquive_service.ler_dado("geminiKEY")

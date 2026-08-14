@@ -23,6 +23,8 @@ class ClientRepository:
             status = linha["status"]
 
             sapecagens.append(
-                Client(id=id, name=nome, phone=telefone, email=email, debt=valor, due_date=vencimento, status=status))
+                Client(id=id, name=nome, phone=telefone, email=email, debt=valor, due_date=vencimento, status=status)
+            )
 
         return sapecagens
+
